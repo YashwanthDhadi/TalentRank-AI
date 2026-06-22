@@ -1,19 +1,13 @@
-from pprint import pprint
+"""Application entry point for generating a ranked submission."""
 
-from src.pipeline.ranking_pipeline import RankingPipeline
-from src.data_loader.job_description_loader import JobDescriptionLoader
+from src.pipeline.submission_generator import SubmissionGenerator
 
-loader = JobDescriptionLoader(
-    "data/raw/job_description.docx"
-)
 
-jd = loader.load()
+def main() -> None:
+    """Generate the submission artifact using default configuration."""
+    generator = SubmissionGenerator()
+    generator.generate()
 
-pipeline = RankingPipeline()
 
-results = pipeline.rank(
-    jd,
-    top_k=10
-)
-
-pprint(results)
+if __name__ == "__main__":
+    main()

@@ -1,54 +1,30 @@
-"""
-candidate_retriever.py
+"""Retrieve semantically similar candidates from the cached FAISS index."""
 
-Loads the saved FAISS index and retrieves
-the most semantically similar candidates.
-"""
+from __future__ import annotations
 
-import pickle
-import faiss
-
+from src.config import DEFAULT_CANDIDATE_RETRIEVER_TOP_K
 from src.embeddings.embedding_engine import EmbeddingEngine
+from src.vector_store.faiss_manager import FAISSManager
 
 
 class CandidateRetriever:
+    """Backward-compatible wrapper around the shared FAISS manager."""
 
     def __init__(self):
-
         self.engine = EmbeddingEngine()
+        self.manager = FAISSManager()
+        self.index = self.manager.index
+        self.candidate_ids = self.manager.candidate_ids
 
-        self.index = faiss.read_index(
-            "artifacts/faiss.index"
-        )
-
-        with open(
-            "artifacts/candidate_ids.pkl",
-            "rb"
-        ) as f:
-
-            self.candidate_ids = pickle.load(f)
-
-    def retrieve(self, jd_document, top_k=1000):
-
+    def retrieve(
+        self,
+        jd_document: str,
+        top_k: int = DEFAULT_CANDIDATE_RETRIEVER_TOP_K,
+    ) -> list[dict[str, float | str]]:
+        """Retrieve candidates for a job-description document."""
         query_embedding = self.engine.encode(jd_document)
-
-        scores, indices = self.index.search(
-            query_embedding.reshape(1, -1),
-            top_k
+        return self.manager.search_by_embedding(
+            query_embedding,
+            top_k=top_k,
+            round_scores=False,
         )
-
-        results = []
-
-        for score, idx in zip(scores[0], indices[0]):
-
-            results.append({
-
-                "candidate_id":
-                    self.candidate_ids[idx],
-
-                "semantic_score":
-                    float(score)
-
-            })
-
-        return results
