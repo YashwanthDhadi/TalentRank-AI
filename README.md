@@ -21,13 +21,23 @@ Automatically retrieve, rank, and explain the best candidates from a large talen
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Live Hosting
 
-**Application**
+**🔗 Streamlit Application:**
 
 https://talent-rank-ai.streamlit.app/
 
 ---
+
+# 🎥 Project Demo
+
+Watch TalentRank AI in action.
+
+▶️ **Demo Video**
+
+https://youtu.be/WK2JSu0zjaA
+
+
 
 ## 📖 Project Overview
 
