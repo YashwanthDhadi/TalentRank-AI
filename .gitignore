@@ -1,44 +1,81 @@
+# ----------------------------
 # Python
+# ----------------------------
 __pycache__/
 *.py[cod]
 *.pyo
 
+# ----------------------------
 # Virtual Environment
+# ----------------------------
 .venv/
 venv/
 env/
 
+# ----------------------------
 # VS Code
+# ----------------------------
 .vscode/
 
+# ----------------------------
 # OS Files
+# ----------------------------
 .DS_Store
 Thumbs.db
 
+# ----------------------------
 # Logs
+# ----------------------------
 logs/
 *.log
 
+# ----------------------------
 # Generated Outputs
+# ----------------------------
 outputs/
 
+# ----------------------------
+# Streamlit Cache
+# ----------------------------
+.streamlit/
+
+# ----------------------------
 # Python Testing
+# ----------------------------
 .pytest_cache/
 
+# ----------------------------
 # Jupyter
+# ----------------------------
 .ipynb_checkpoints/
 
+# ----------------------------
 # Build
+# ----------------------------
 build/
 dist/
 *.egg-info/
 
+# ----------------------------
 # Dataset
-data/raw/
+# ----------------------------
 data/processed/
 
-# Models (generated)
+# Keep your sample/raw data if required.
+# Uncomment the next line only if you don't want it in GitHub.
+data/raw/
+
+# ----------------------------
+# Runtime Artifacts
+# ----------------------------
+artifacts/
+
+# ----------------------------
+# Models
+# ----------------------------
 models/
 
-# Environment variables
+# ----------------------------
+# Environment Variables
+# ----------------------------
 .env
