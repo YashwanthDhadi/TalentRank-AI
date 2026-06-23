@@ -537,29 +537,6 @@ Launch Dashboard
 
 ---
 
-# 📸 Application Screenshots
-
-Add screenshots here after deployment.
-
-## Dashboard
-
-```text
-docs/dashboard.png
-```
-
-## Candidate Ranking
-
-```text
-docs/ranking.png
-```
-
-## AI Explanation
-
-```text
-docs/reasoning.png
-```
-
----
 
 # 📈 Scalability
 
