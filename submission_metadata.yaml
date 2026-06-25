@@ -1,0 +1,101 @@
+```yaml
+# ============================================================================
+# Team identity
+# ============================================================================
+
+team_name: "TalentRank-AI"
+
+primary_contact:
+  name: "Yashwanth Dhadi"
+  email: "yashwanthdhadi77@gmail.com"
+  phone: "+91-9502542919"
+
+team_members:
+  - name: "Yashwanth Dhadi"
+    email: "yashwanthdhadi77"
+    role: "Team Lead | AI/ML Developer"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+
+github_repo: "https://github.com/YashwanthDhadi/TalentRank-AI"
+
+sandbox_link: "https://talent-rank-ai.streamlit.app/"
+
+reproduce_command: "streamlit run app.py"
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+
+compute:
+  platform: "Windows 11 (Local Development)"
+  cpu_cores: 10
+  ram_gb: 16
+  python_version: "3.11.2"
+  os: "Windows 11 (64-bit)"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: true
+  pre_computation_required: true
+  pre_computation_time_minutes: 240
+```yaml
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+
+ai_tools_used:
+  - "ChatGPT"
+  - "OpenAI Codex"
+  - "Claude AI"
+  - "Google Gemini"
+
+ai_usage_summary: |
+  AI-assisted development tools were used throughout the project to improve
+  productivity while ensuring all design decisions, implementation, testing,
+  and validation were performed by the team.
+
+  • Claude AI – Used during the initial planning phase to develop the project
+    blueprint, architecture, and implementation roadmap.
+
+  • ChatGPT – Used for brainstorming ideas, feature refinement, debugging,
+    implementation guidance, documentation, and exploring innovative approaches.
+
+  • OpenAI Codex – Used to accelerate implementation of selected modules,
+    repetitive coding tasks, and logic blocks, followed by manual review and
+    integration into the overall system.
+
+  • Google Gemini – Used for technical research, concept verification, and
+    gathering reference information during development.
+
+  All generated code, architectural decisions, integration, testing, and final
+  validation were reviewed and verified by the team before submission.
+```
+
+# ============================================================================
+# Approach summary
+# ============================================================================
+
+methodology_summary: |
+  TalentRank AI is an NLP-based candidate discovery and ranking system that
+  analyzes a Job Description, generates its semantic representation, retrieves
+  the most relevant candidates using a FAISS vector index, and evaluates them
+  through a hybrid ranking engine. The ranking combines semantic relevance,
+  skill alignment, experience matching, career progression, and candidate
+  quality indicators to produce the final ranked list. The system also generates
+  explainable recommendations for every candidate, improving transparency for
+  recruiters. Large artifacts are precomputed and automatically downloaded from
+  Hugging Face at startup, enabling lightweight deployment while meeting CPU-only
+  execution requirements.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: false
+  reproduction_tested: true
+```
